@@ -5,6 +5,7 @@ import time
 import json
 import base64
 from wrapper import *
+from wrapper2 import *
 #from IPython.display import clear_output
 #from IPython.display import Image
 #from IPython.display import display
@@ -49,7 +50,7 @@ def register_user(payload):
 def do_login_register():
     while True:
         #clear_output()
-        print("Welcome to the Bookstore Quiz Bowl!")
+        print("Welcome to the Quiz Bowl!")
         email = input("Type your email to login or Type `register` to Register: ")
         if email == 'register':
             success_register=register()                
@@ -86,17 +87,18 @@ Would you like to:
 6. Quit the application     
 """)
         command = input("Select your Fate: ")
-        if command == "1":
+        if command == "1"or ("take a quiz").lower:
             pass
-        elif command == "2":
+        elif command == "2" or ("Creat a question").lower:
+            create_question()
+            return
+        elif command == "3" or ("Edit a Question").lower:
             pass
-        elif command == "3":
+        elif command == "4" or ("Delete a Question").lower:
             pass
-        elif command == "4":
-            pass
-        elif command == "5":
+        elif command == "5" or ("View My Questions").lower:
             pass         
-        elif command == "6":
+        elif command == "6" or ("Quit the application").lower:
             print("Goodbye")
             break
         else:

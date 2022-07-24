@@ -78,7 +78,15 @@ def post_question(token, payload):
     return response.text
     
     
-    
+def create_question(self):
+    question = input('Enter your question:\n')
+    answer = input('Enter your answer:\n')
+
+    question_dict={
+        'question': question,
+        'answer': answer
+    }
+    return post_question(self.user['token'], question_dict)  
     
 question_payload={
     "question":"What country produces the most coffee in the world?",
