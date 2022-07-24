@@ -54,6 +54,7 @@ login_user('shaynehakuna26@gmail.com','123')
 Shayne=login_user('shaynehakuna26@gmail.com','123')
 print(Shayne['token'])
 
+
 response = requests.get(url+endpoint_question_all)
 print(response.status_code )
 
@@ -66,8 +67,8 @@ question_all
 def post_question(token, payload):
     payload_json_string = json.dumps(payload)
     headers = {
-        'Content-Type':'application/json'
-        'Authorization':"Bearer " + token
+        'Content-Type':'application/json',        
+        'Authorization':'Bearer' + token
     }
     response = requests.post(
         url + endpoint_question,
