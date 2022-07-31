@@ -165,6 +165,11 @@ def get_questions_all():
     question_all = requests.get(url+endpoint_question_all)
     return question_all.json()['questions']
 
+def get_question(answer, real):
+    if answer == real:
+        return True
+    else:
+        return False
 
 
 def main():
