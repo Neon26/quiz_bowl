@@ -98,7 +98,7 @@ def register_user(payload):
 #If the User is you (has your google-classroom email address) The user should be prompted with extra prompts that each work properly:
 #NOTE: They should also be able to take the quiz like a normal user
 #Create Question
-def create_question(self):
+def create_question(payload):
     question = input('Enter your question:\n')
     answer = input('Enter your answer:\n')
 
@@ -106,7 +106,7 @@ def create_question(self):
         'question': question,
         'answer': answer
     }
-    return create_question(self.user['token'], question_dict)
+    return create_question(payload['token'], question_dict)
 def create_question(token, payload):
     payload_json_string = json.dumps(payload)
 
